@@ -24,14 +24,23 @@
                                 <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}">
                             </div>
                         </div>
+                        <!-- Product image link -->
+                        <div class="form-group">
+                            <label for="image" class="col-sm-3 control-label">Image link</label>
+
+                            <div class="col-sm-6">
+                                <input type="text" name="image" id="image" class="form-control" value="{{ old('image') }}">
+                            </div>
+                        </div>
                         <!-- Product Category -->
                         <div class="form-group">
                             <label for="product-category" class="col-sm-3 control-label">Category</label>
                             <div class="col-sm-6">
                               <select name="category" form="productform" id="product-category" class="form-control" value="{{ old('category') }}">
-                                <option value="work">work</option>
-                                <option value="leisure">leisure</option>
-                                <option value="home">home</option>
+                                <option value="mobile">mobile</option>
+                                <option value="web">web</option>
+                                <option value="games">games</option>
+                                <option value="strategy">strategy</option>
                               </select>
                             </div>
                         </div>

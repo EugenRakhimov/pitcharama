@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     //
-    protected $fillable = ['name','category'];
+    protected $fillable = ['name','category','image'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function products()
+    public function features()
     {
-      return $this->hasMany(Features::class);
+      return $this->hasMany(Feature::class);
     }
 }

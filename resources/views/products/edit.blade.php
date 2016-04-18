@@ -25,14 +25,23 @@
                                 <input type="text" name="name" id="product-name" class="form-control" value="{{ $product->name  }}">
                             </div>
                         </div>
+                        <!-- Product image link -->
+                        <div class="form-group">
+                            <label for="image" class="col-sm-3 control-label">Image link</label>
+
+                            <div class="col-sm-6">
+                                <input type="text" name="image" id="image" class="form-control" value="{{ $product->image }}">
+                            </div>
+                        </div>
                         <!-- Product Category -->
                         <div class="form-group">
                             <label for="product-category" class="col-sm-3 control-label">Category</label>
                             <div class="col-sm-6">
                               <select name="category" form="productform" id="product-category" class="form-control" value="{{ $product->category }}">
-                                <option value="work" >work</option>
-                                <option value="leisure" {{$product->category=='leisure' ? 'selected':'' }} >leisure</option>
-                                <option value="home" {{$product->category=='home' ? 'selected' : ''}}>home</option>
+                                <option value="mobile">mobile</option>
+                                <option value="web" {{$product->category=='web' ? 'selected':'' }}>web</option>
+                                <option value="games" {{$product->category=='games' ? 'selected':'' }}>games</option>
+                                <option value="strategy" {{$product->category=='strategy' ? 'selected':'' }}>strategy</option>
                               </select>
                             </div>
                         </div>

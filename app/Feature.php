@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Feature extends Model
 {
-    protected $fillable = ['comment_body'];
+    protected $fillable = ['name','feature_body'];
 
     public function product()
     {

@@ -11,7 +11,7 @@
 |
 */
 
-
+Route::resource('visitor', 'VisitorController');
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +31,5 @@ Route::group(['middleware' => ['web']], function () {
     // Authentication Routes...
     Route::auth();
     Route::resource('product', 'ProductController');
-    Route::resource('feature', 'FeatureController');
+    Route::resource('product.feature', 'FeatureController');
 });

@@ -20,9 +20,16 @@ class ProductController extends Controller
         $products = Product::where('user_id', $request->user()->id)->get();
         return view('products.index',['products' => $products]);
     }
-    public function show(Request $request)
+    public function show(Request $request, Product $product)
     {
-
+      if($product->user_id ==  $request->user()->id)
+      {
+          return view('products.show',['product' => $product]);
+      }
+      else
+      {
+          return view('errors.503');
+      }
     }
     public function edit(Request $request, Product $product)
     {
@@ -53,10 +60,12 @@ class ProductController extends Controller
         {
             $this->validate($request, [
                 'name' => 'required|max:255',
-                'category' => 'required|in:work,home,leisure'
+                'image' => 'required|max:255',
+                'category' => 'required|in:mobile,web,games,strategy'
             ]);
             $product->update([
                 'name' => $request->name,
+                'image' => $request->image,
                 'category' => $request->category
             ]);
             return redirect('/product');
@@ -71,10 +80,12 @@ class ProductController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
-            'category' => 'required|in:work,home,leisure'
+            'image' => 'required|max:255',
+            'category' => 'required|in:mobile,web,games,strategy'
         ]);
         $request->user()->products()->create([
             'name' => $request->name,
+            'image' => $request->image,
             'category' => $request->category
         ]);
         return redirect('/product');

@@ -15,6 +15,7 @@ class CreateFeaturesTable extends Migration
         Schema::create('features', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('product_id')->index();
+            $table->string('name');
             $table->string('feature_body');
             $table->timestamps();
         });

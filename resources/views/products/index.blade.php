@@ -19,6 +19,7 @@
           <tr>
             <th>Product</th>
             <th>Category</th>
+            <th>image</th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -29,6 +30,16 @@
             <tr>
               <td>{{ $product->name }}</td>
               <td>{{ $product->category }}</td>
+              <td><img src={{$product->image}} alt="" /></img></td>
+              <td>
+                <form action="/product/{{ $product->id }}" method="GET">
+                  {{ csrf_field() }}
+
+                  <button type="submit" id="edit-product-{{ $product->id }}" class="btn btn-danger">
+                      <i class="fa fa-btn fa-search"></i>Show and add content
+                  </button>
+                </form>
+              </td>
               <td>
                 <form action="/product/{{ $product->id }}/edit" method="GET">
                   {{ csrf_field() }}

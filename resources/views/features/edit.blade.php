@@ -34,6 +34,15 @@
                          </div>
                      </div>
 
+                     <!-- Product image link -->
+                     <div class="form-group">
+                         <label for="image" class="col-sm-3 control-label">Image link</label>
+
+                         <div class="col-sm-6">
+                             <input type="text" name="image" id="image" class="form-control" value="{{ $product->image }}">
+                         </div>
+                     </div>
+
                      <!-- Add Feature Button -->
                      <div class="form-group">
                          <div class="col-sm-offset-3 col-sm-6">

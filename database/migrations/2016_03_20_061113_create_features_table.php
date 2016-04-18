@@ -16,7 +16,9 @@ class CreateFeaturesTable extends Migration
             $table->increments('id');
             $table->integer('product_id')->index();
             $table->string('name');
-            $table->string('feature_body');
+            $table->longText('feature_body');
+            $table->longText('content');
+            $table->string('image');
             $table->timestamps();
         });
     }

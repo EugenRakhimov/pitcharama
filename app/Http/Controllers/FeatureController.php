@@ -40,7 +40,9 @@ class FeatureController extends Controller
         ]);
         $feature->update([
           'name' => $request->name,
-          'feature_body' => $request->feature_body
+          'feature_body' => $request->feature_body,
+          'content' => $request->content,
+          'image' => $request->image
         ]);
         return redirect('/product/'.$product->id);
       }
@@ -77,7 +79,9 @@ class FeatureController extends Controller
       {
         $product->features()->create([
             'name' => $request->name,
-            'feature_body' => $request->feature_body
+            'feature_body' => $request->feature_body,
+            'content' => $request->content,
+            'image' => $request->image
         ]);
         return redirect('/product/'.$productId);
       }

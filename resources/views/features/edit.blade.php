@@ -33,13 +33,21 @@
                              class="form-control" value="{{ $feature->feature_body }}">{{ $feature->feature_body }}</textarea>
                          </div>
                      </div>
+                     <!-- Feature Content -->
+                     <div class="form-group">
+                         <label for="feature_body" class="col-sm-3 control-label">Feature content</label>
+                         <div class="col-sm-6">
+                             <textarea name="content" form="featureform" id="content"
+                              class="form-control" value="">{{ $feature->content }}</textarea>
+                         </div>
+                     </div>
 
                      <!-- Product image link -->
                      <div class="form-group">
                          <label for="image" class="col-sm-3 control-label">Image link</label>
 
                          <div class="col-sm-6">
-                             <input type="text" name="image" id="image" class="form-control" value="{{ $product->image }}">
+                             <input type="text" name="image" id="image" class="form-control" value="{{ $feature->image }}">
                          </div>
                      </div>
 

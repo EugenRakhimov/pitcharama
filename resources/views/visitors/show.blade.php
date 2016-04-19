@@ -126,25 +126,10 @@
           @if ($feature->id%2 == 0)
     				<section id="{{$feature->name}}" class="cbp-so-section">
     					<figure class="cbp-so-side cbp-so-side-left">
-    						 <!-- <img src={{$feature->image}} alt="img01"> -->
-								 <div class="marvel-device iphone5s gold">
- 							    <div class="top-bar"></div>
- 							    <div class="sleep"></div>
- 							    <div class="volume"></div>
- 							    <div class="camera"></div>
- 							    <div class="sensor"></div>
- 							    <div class="speaker"></div>
- 							    <div class="screen" style='background: url({{$feature->image}}) no-repeat center center; '>
-
- 							    </div>
- 							    <div class="home"></div>
- 							    <div class="bottom-bar"></div>
- 								</div>
-
+								 @include('visitors.device')
     					</figure>
     					<article class="cbp-so-side cbp-so-side-right">
-    						<h2> {{$feature->name}} </h2>
-    						<p>{{$feature->feature_body}}</p>
+    						@include('visitors.article')
     						<p>
     							<button class="btn btn-default" data-toggle="modal" data-target="#myModal" >
     								Want to know the cost of an App like this
@@ -155,27 +140,13 @@
           @else
     				<section id="{{$feature->name}}" class="cbp-so-section">
     					<article class="cbp-so-side cbp-so-side-left">
-    						<h2> {{$feature->name}}</h2>
-    						<p>{{$feature->feature_body}}</p>
+    						@include('visitors.article')
     					</article>
 
     					<figure class="cbp-so-side cbp-so-side-right">
     						<!-- <img src={{$feature->image}} alt="img01"> -->
-								@include('visitors.iphone')
-								<div class="marvel-device iphone5s gold">
+								@include('visitors.device')
 
-							    <div class="top-bar"></div>
-							    <div class="sleep"></div>
-							    <div class="volume"></div>
-							    <div class="camera"></div>
-							    <div class="sensor"></div>
-							    <div class="speaker"></div>
-							    <div class="screen" style='background: url({{$feature->image}}) no-repeat center center; '>
-							        <!-- Content goes here -->
-							    </div>
-							    <div class="home"></div>
-							    <div class="bottom-bar"></div>
-								</div>
     					</figure>
 
     				</section>

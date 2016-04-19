@@ -36,12 +36,14 @@ class FeatureController extends Controller
       {
         $this->validate($request, [
             'name' => 'required|max:255',
-            'feature_body' => 'required'
+            'feature_body' => 'required',
+            'image_frame'=>'required|in:none,iphone5s,ipad,desktop'
         ]);
         $feature->update([
           'name' => $request->name,
           'feature_body' => $request->feature_body,
           'content' => $request->content,
+          'image_frame' => $request->image_frame,
           'image' => $request->image
         ]);
         return redirect('/product/'.$product->id);
@@ -69,7 +71,8 @@ class FeatureController extends Controller
   {
       $this->validate($request, [
           'name' => 'required|max:255',
-          'feature_body' => 'required'
+          'feature_body' => 'required',
+          'image_frame'=>'required|in:none,iphone5s,ipad,desktop'
       ]);
       $productId = (int)$productId;
       $product = Product::find($productId);
@@ -81,6 +84,7 @@ class FeatureController extends Controller
             'name' => $request->name,
             'feature_body' => $request->feature_body,
             'content' => $request->content,
+            'image_frame' => $request->image_frame,
             'image' => $request->image
         ]);
         return redirect('/product/'.$productId);

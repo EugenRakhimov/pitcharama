@@ -33,19 +33,23 @@
                              class="form-control" value="{{ $feature->feature_body }}">{{ $feature->feature_body }}</textarea>
                          </div>
                      </div>
-                     <!-- Feature Content -->
+                     <!-- Feature image_frame -->
                      <div class="form-group">
-                         <label for="feature_body" class="col-sm-3 control-label">Feature content</label>
+                         <label for="image_frame" class="col-sm-3 control-label">Image frame</label>
                          <div class="col-sm-6">
-                             <textarea name="content" form="featureform" id="content"
-                              class="form-control" value="">{{ $feature->content }}</textarea>
+                           <select name="image_frame" form="featureform" id="image_frame" class="form-control" value="{{ $feature->image_frame }}">
+                             <option value="none">none</option>
+                             <option value="iphone5s" {{$feature->image_frame=='iphone5s' ? 'selected':'' }}>iphone5s</option>
+                             <option value="ipad" {{$feature->image_frame=='ipad' ? 'selected':'' }}>ipad</option>
+                             <option value="desktop" {{$feature->image_frame=='desktop' ? 'selected':'' }}>desktop</option>
+                           </select>
                          </div>
                      </div>
+
 
                      <!-- Product image link -->
                      <div class="form-group">
                          <label for="image" class="col-sm-3 control-label">Image link</label>
-
                          <div class="col-sm-6">
                              <input type="text" name="image" id="image" class="form-control" value="{{ $feature->image }}">
                          </div>

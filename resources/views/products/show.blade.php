@@ -27,6 +27,7 @@
           <th>Feature</th>
           <th>Text</th>
           <th>Content</th>
+          <th>Image frame</th>
           <th>Image</th>
           <th colspan="3"></th>
         </tr>
@@ -40,6 +41,9 @@
             <td>{{ $feature->feature_body}}</td>
             <td>
               {{$feature->content}}
+            </td>
+            <td>
+              {{$feature->image_frame}}
             </td>
             <td>
               <img src="{{$feature->image}}" alt="" />

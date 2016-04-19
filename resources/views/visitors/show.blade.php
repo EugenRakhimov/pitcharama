@@ -11,15 +11,16 @@
 		<link rel="shortcut icon" href="../favicon.ico">
 
 
+		<link rel="stylesheet" href="../css/devices.min.css" type="text/css">
 		<link rel="stylesheet" type="text/css" href="../css/main.css" />
 		<link rel="stylesheet" href="../css/font.css">
 
 		<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="../css/visitor/demo.css" />
+		<link rel="stylesheet" type="text/css" href="../css/visitor/component.css" />
 
-		<script src="js/modernizr.custom.js"></script>
+		<script src="../js/modernizr.custom.js"></script>
 		<script src="../bootstrap/js/jquery.min.js"></script>
 	</head>
 	<body>
@@ -43,7 +44,7 @@
 
 
 		        </p>
-		        <img src="mobile/images/chart/piechart.png" style="float: right; width: 30%" >
+		        <img src="../img/piechart.png" style="float: right; width: 30%" >
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
@@ -58,11 +59,11 @@
 		<div class="header-container">
             <header class="wrapper clearfix">
 
-            	<a href="index.html" class="logo">SuperLogical</a>
+            	<a href="../" class="logo">SuperLogical</a>
 
         		<!-- START MENU  -->
         		<ul class="menu" id="headnav">
-        			<li class="feat"><a href="index.html#">What we do</a></li>
+        			<li class="feat"><a href="../#">What we do</a></li>
         			<li><a href="../portfolio.html" class="active"> Our Work </a></li>
         			<li class="last"><a href="mailto:hello@superlogical.org">Contact Us</a></li>
         		</ul>
@@ -75,8 +76,8 @@
 
 
 		<!-- ======== 3D MOBILE ============ -->
-		<link rel="stylesheet" type="text/css" href="mobile/css/component.css" />
-		<script src="mobile/js/modernizr.custom.js"></script>
+		<link rel="stylesheet" type="text/css" href="../mobile/css/component.css" />
+		<script src="../mobile/js/modernizr.custom.js"></script>
 		<div class="ms-wrapper ms-effect-3">
 
 			<script>
@@ -102,19 +103,17 @@
 					</div><!-- /ms-object -->
 					<div class="ms-screens" >
             @if (count($product->features) > 0)
-            {{$cnt = 315}}
-            @foreach ($product->features as $feature)
-              {{$cnt = $cnt-50}}
-              <a href="#{{$feature->name}}" style='background: url({{$feature->image}}) no-repeat center center; transform: translateZ({{$cnt}}px);'>
-                <div class="ms-label">{{$feature->name}}</div></a>
-            @endforeach
+							@for ($i = 0; $i < $product->features->count(); $i++)
+								<a href="#{{$product->features[$i]->name}}" style='background: url({{$product->features[$i]->image}}) no-repeat center center; transform: translateZ({{265-$i*50}}px);'>
+								<div class="ms-label">{{$product->features[$i]->name}}</div></a>
+							@endfor
             @endif
 					</div>
 				</div><!-- /ms-device -->
 			</div><!-- /ms-perspective -->
 		</div><!-- /ms-wrapper -->
-		<script src="mobile/js/classie.js"></script>
-		<script src="mobile/js/phoneSlideshow.js"></script>
+		<script src="../mobile/js/classie.js"></script>
+		<script src="../mobile/js/phoneSlideshow.js"></script>
 		<!-- ======== /3D MOBILE ============ -->
 
 
@@ -123,12 +122,24 @@
 
       @if (count($product->features) > 0)
         <div id="cbp-so-scroller" class="cbp-so-scroller">
-        {{$cnt = 0}}
         @foreach ($product->features as $feature)
-          @if ($cnt%2 == 0)
+          @if ($feature->id%2 == 0)
     				<section id="{{$feature->name}}" class="cbp-so-section">
     					<figure class="cbp-so-side cbp-so-side-left">
-    						 <img src={{$feature->image}} alt="img01">
+    						 <!-- <img src={{$feature->image}} alt="img01"> -->
+								 <div class="marvel-device iphone5s gold">
+ 							    <div class="top-bar"></div>
+ 							    <div class="sleep"></div>
+ 							    <div class="volume"></div>
+ 							    <div class="camera"></div>
+ 							    <div class="sensor"></div>
+ 							    <div class="speaker"></div>
+ 							    <div class="screen" style='background: url({{$feature->image}}) no-repeat center center; '>
+
+ 							    </div>
+ 							    <div class="home"></div>
+ 							    <div class="bottom-bar"></div>
+ 								</div>
 
     					</figure>
     					<article class="cbp-so-side cbp-so-side-right">
@@ -143,19 +154,32 @@
     				</section>
           @else
     				<section id="{{$feature->name}}" class="cbp-so-section">
-
     					<article class="cbp-so-side cbp-so-side-left">
     						<h2> {{$feature->name}}</h2>
     						<p>{{$feature->feature_body}}</p>
     					</article>
 
     					<figure class="cbp-so-side cbp-so-side-right">
-    						<img src={{$feature->image}} alt="img01">
+    						<!-- <img src={{$feature->image}} alt="img01"> -->
+								@include('visitors.iphone')
+								<div class="marvel-device iphone5s gold">
+
+							    <div class="top-bar"></div>
+							    <div class="sleep"></div>
+							    <div class="volume"></div>
+							    <div class="camera"></div>
+							    <div class="sensor"></div>
+							    <div class="speaker"></div>
+							    <div class="screen" style='background: url({{$feature->image}}) no-repeat center center; '>
+							        <!-- Content goes here -->
+							    </div>
+							    <div class="home"></div>
+							    <div class="bottom-bar"></div>
+								</div>
     					</figure>
 
     				</section>
           @endif
-          {{$cnt = $cnt+1}}
         @endforeach
         </div>
       @endif
@@ -206,7 +230,7 @@
             <footer class="wrapper clearfix">
 
                 <!-- LOGO Replace // Replace Text with your App name for SEO, text is replaced with logo.png file  -->
-                <h1><a href="index.html" class="logofoot">Superlogical</a></h1>
+                <h1><a href="../" class="logofoot">Superlogical</a></h1>
 
                 <!-- INSERT Footer Links // Insert Desired menu items  -->
                 <ul>
@@ -220,8 +244,8 @@
         </div>
 
 
-		<script src="js/classie.js"></script>
-		<script src="js/cbpScroller.js"></script>
+		<script src="../js/classie.js"></script>
+		<script src="../js/cbpScroller.js"></script>
 		<script>
 			new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
 

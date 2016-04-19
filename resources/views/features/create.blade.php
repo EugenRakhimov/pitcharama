@@ -44,12 +44,12 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="image_frame" class="col-sm-3 control-label">Category</label>
+                            <label for="image_frame" class="col-sm-3 control-label">Image frame</label>
                             <div class="col-sm-6">
-                              <select name="category" form="featureform" id="image_frame" class="form-control" value="{{ $product->category }}">
+                              <select name="image_frame" form="featureform" id="image_frame" class="form-control" >
                                 <option value="none">none</option>
                                 <option value="iphone5s" >iphone5s</option>
-                                <option value="ipad" >ipad</option>
+                                <option value="ipad">ipad</option>
                                 <option value="desktop" >desktop</option>
                               </select>
                             </div>

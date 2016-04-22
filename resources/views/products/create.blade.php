@@ -55,6 +55,14 @@
                         </div>
                     </form>
                 </div>
+                <form action="/product/create" method="GET">
+                  {{ csrf_field() }}
+                  {{ method_field('create') }}
+
+                  <button type="submit" id="new-product" class="btn btn-danger">
+                      <i class="fa fa-btn fa-trash"></i>NEW
+                  </button>
+                </form>
             </div>
         </div>
     </div>

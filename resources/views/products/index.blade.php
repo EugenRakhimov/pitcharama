@@ -67,15 +67,25 @@
       </table>
 
       <br>
+      <div class="col-md-2">
+        <form action="/product/create" method="GET">
+          {{ csrf_field() }}
+          {{ method_field('create') }}
 
-      <form action="/product/create" method="GET">
-        {{ csrf_field() }}
-        {{ method_field('create') }}
+          <button type="submit" id="new-product" class="btn btn-danger">
+              <i class="fa fa-btn fa-trash"></i>NEW
+          </button>
+        </form>
+      </div>
+      <div class="col-md-2">
+        <form action="/spreadsheets/load" method="post">
+          {{ csrf_field() }}
 
-        <button type="submit" id="new-product" class="btn btn-danger">
-            <i class="fa fa-btn fa-trash"></i>NEW
-        </button>
-      </form>
+          <button type="submit" id="new-product" class="btn btn-danger">
+              <i class="fa fa-btn fa-trash"></i>Load from Google Spreadsheets
+          </button>
+        </form>
+      </div>
     </div>
     <!-- /.row -->
 

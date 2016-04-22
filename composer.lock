@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "10a2871f1b45c8dccd1e8dc8f6a2e48f",
-    "content-hash": "8b1485987e7c5949da82435d403e52e8",
+    "hash": "bc02c1c58e56ff7e973513ceadddcb5b",
+    "content-hash": "6edd066ec8326bb272d12a57b830b6ec",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -160,6 +160,49 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "google/apiclient",
+            "version": "1.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/google/google-api-php-client.git",
+                "reference": "400f250a30ae1dd4c4a0a4f750fe973fc70e6311"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/400f250a30ae1dd4c4a0a4f750fe973fc70e6311",
+                "reference": "400f250a30ae1dd4c4a0a4f750fe973fc70e6311",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Client library for Google APIs",
+            "homepage": "http://developers.google.com/api-client-library/php",
+            "keywords": [
+                "google"
+            ],
+            "time": "2016-02-02 18:50:42"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -516,6 +559,42 @@
                 "storage"
             ],
             "time": "2016-03-14 21:54:11"
+        },
+        {
+            "name": "mitni/laravel-google-spreadsheet",
+            "version": "v0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/punkrockio/google-spreadsheet.php.git",
+                "reference": "c19693711b424491d5b5dcb66d5ae69c8404c5d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/punkrockio/google-spreadsheet.php/zipball/c19693711b424491d5b5dcb66d5ae69c8404c5d7",
+                "reference": "c19693711b424491d5b5dcb66d5ae69c8404c5d7",
+                "shasum": ""
+            },
+            "require": {
+                "google/apiclient": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "mach3",
+                    "email": "mach3ss@gmail.com"
+                }
+            ],
+            "description": "Google spreadsheet client",
+            "time": "2015-09-14 11:46:44"
         },
         {
             "name": "monolog/monolog",

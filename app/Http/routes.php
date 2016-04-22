@@ -32,4 +32,5 @@ Route::group(['middleware' => ['web']], function () {
     Route::auth();
     Route::resource('product', 'ProductController');
     Route::resource('product.feature', 'FeatureController');
+    Route::post('spreadsheets/load', 'SpreadsheetController@load');
 });

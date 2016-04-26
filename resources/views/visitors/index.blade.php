@@ -55,9 +55,8 @@
 
                 		<!-- START MENU  -->
                 		<ul class="menu" id="headnav">
-                			<li class="feat"><a href="index.html">What we do</a></li>
-                			<li><a class="active" href="#" > Our Work </a></li>
-                			<li><a href="team.html" > Our Team </a></li>
+                			<li class="feat"><a href="/">What we do</a></li>
+                			<li><a class="active" href="/" > Our Work </a></li>
                 			<li class="last"><a href="mailto:nick@superlogic.al">Contact Us</a></li>
                 		</ul>
 
@@ -124,7 +123,7 @@
             @if (count($products) > 0)
               @foreach ($products as $product)
     						<li class="mix {{$product->category}}" data-myorder="1" data-myorder="1">
-    							<a href="visitor/{{$product->id}}" target="_self">
+    							<a href="/portfolio/{{$product->id}}" target="_self">
     								<img src={{$product->image}} />
     								<div><span> <h2 > {{$product->name}} </h2> </span></div>
     							</a>

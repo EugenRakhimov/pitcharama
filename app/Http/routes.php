@@ -13,6 +13,10 @@
 
 Route::resource('/portfolio', 'VisitorController');
 
+Route::get('/', function () {
+    return redirect()->action('VisitorController@index');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -25,9 +29,7 @@ Route::resource('/portfolio', 'VisitorController');
 */
 
 Route::group(['prefix'=>'admin','middleware' => ['web']], function () {
-    Route::get('/', function () {
-        return redirect()->action('ProductController@index');
-    });
+
     // Authentication Routes...
     Route::auth();
     Route::resource('/portfolio', 'ProductController');

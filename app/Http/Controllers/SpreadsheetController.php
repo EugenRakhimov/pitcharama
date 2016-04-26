@@ -17,25 +17,42 @@ class SpreadsheetController extends Controller
 {   private function store ($name, $image, $category)
     {
       $user = Auth::user();
-      // $request['name'] = $name;
-      // $request['image'] = $image;
-      // $request['category'] = $category;
-      // // $this->validate($request, [
-      // //     'name' => 'required|max:255',
-      // //     'image' => 'required|max:255',
-      // //     'category' => 'required|in:mobile,web,games,strategy'
-      // // ]);
-      $user->products()->create([
+      $product= $user->products()->create([
           'name' => $name,
           'image' =>$image,
           'category' =>$category
       ]);
-
+      return $product;
+    }
+    private function store_feature($product, $name, $body, $image_frame, $image){
+      $feature = $product->features()->create([
+      'name' => $name,
+      'feature_body' => $body,
+      'image_frame' => $image_frame,
+      'image' => $image
+    ]);
     }
 
-    private function load_features($product_id)
+    private function load_features($product_id, $product, $client)
     {
-
+      $features_file = $client->file("1jMWr23fPEf9UHZLRdZM2_ST5hqZhCMWYt0cTCkOOQpA");
+      $features_sheet = $features_file->sheet("Sheet1");
+      $result = true;
+      $row = 2;
+      while ($result ) {
+        $features = $features_sheet->select(array("row" => "$row"));
+        $row = $row + 1;
+        if (count($features) == 0) {
+          // echo "here";
+          $result = false;
+        }
+        else {
+          if($features[0]['product_id']==$product_id){
+            $feature = $this->store_feature($product, $features[0]['name'],$features[0]['feature_body']
+             ,$features[0]['image_frame']  ,$features[0]['image']);
+          }
+        }
+      }
     }
 
 
@@ -44,10 +61,7 @@ class SpreadsheetController extends Controller
       $path = base_path('credential.json');
       $client = GoogleSpreadsheet::getClient($path);
       $products_file = $client->file("13S44sM1RqxLOp0HSkTA0IPvIYsX02s1ie3QLoMAY9JY");
-      $features_file = $client->file("1jMWr23fPEf9UHZLRdZM2_ST5hqZhCMWYt0cTCkOOQpA");
-            // Get the sheet by title
       $product_sheet = $products_file->sheet("Sheet1");
-      $features_sheet = $features_file->sheet("Sheet1");
       $result = true;
       $row = 2;
       while ($result ) {
@@ -58,9 +72,9 @@ class SpreadsheetController extends Controller
           $result = false;
         }
         else {
-        echo  $items[0]['Name'];
-        $this->store( $items[0]['Name'],$items[0]['Image'] ,$items[0]['Category'] );
-        $this->load_features($items[0]['ID']);
+        // echo  $items[0]['Name'];
+          $product = $this->store( $items[0]['Name'],$items[0]['Image'] ,$items[0]['Category'] );
+          $this->load_features($items[0]['ID'], $product, $client);
         }
       }
 

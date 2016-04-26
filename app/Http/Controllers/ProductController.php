@@ -20,8 +20,9 @@ class ProductController extends Controller
         $products = Product::where('user_id', $request->user()->id)->get();
         return view('products.index',['products' => $products]);
     }
-    public function show(Request $request, Product $product)
+    public function show(Request $request, $product_id)
     {
+      $product= Product::find( $product_id);
       if($product->user_id ==  $request->user()->id)
       {
           return view('products.show',['product' => $product]);
@@ -31,8 +32,8 @@ class ProductController extends Controller
           return view('errors.503');
       }
     }
-    public function edit(Request $request, Product $product)
-    {
+    public function edit(Request $request, $product_id)
+    {   $product= Product::find( $product_id);
         if($product->user_id ==  $request->user()->id)
         {
             return view('products.edit',['product' => $product]);

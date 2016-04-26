@@ -13,7 +13,7 @@
                     @include('common.errors')
 
                     <!-- New Product Form -->
-                    <form action="/product/{{ $product->id }}" method="POST" class="form-horizontal" id = "productform">
+                    <form action="/admin/portfolio/{{ $product->id }}" method="POST" class="form-horizontal" id = "productform">
                         {{ csrf_field() }}
                         {{ method_field('PATCH') }}
 

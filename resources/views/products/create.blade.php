@@ -13,7 +13,7 @@
                     @include('common.errors')
 
                     <!-- New Product Form -->
-                    <form action="/product" method="POST" class="form-horizontal" id = "productform">
+                    <form action="/admin/portfolio" method="POST" class="form-horizontal" id = "productform">
                         {{ csrf_field() }}
 
                         <!-- Product Name -->
@@ -55,7 +55,7 @@
                         </div>
                     </form>
                 </div>
-                <form action="/product/create" method="GET">
+                <form action="/admin/portfolio/create" method="GET">
                   {{ csrf_field() }}
                   {{ method_field('create') }}
 

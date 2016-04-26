@@ -11,7 +11,7 @@
 |
 */
 
-Route::resource('visitor', 'VisitorController');
+Route::resource('/portfolio', 'VisitorController');
 
 /*
 |--------------------------------------------------------------------------

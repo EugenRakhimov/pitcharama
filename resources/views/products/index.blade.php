@@ -32,7 +32,7 @@
               <td>{{ $product->category }}</td>
               <td><img src={{$product->image}} alt="" /></img></td>
               <td>
-                <form action="/product/{{ $product->id }}" method="GET">
+                <form action="/admin/portfolio/{{ $product->id }}" method="GET">
                   {{ csrf_field() }}
 
                   <button type="submit" id="edit-product-{{ $product->id }}" class="btn btn-danger">
@@ -41,7 +41,7 @@
                 </form>
               </td>
               <td>
-                <form action="/product/{{ $product->id }}/edit" method="GET">
+                <form action="/admin/portfolio/{{ $product->id }}/edit" method="GET">
                   {{ csrf_field() }}
                   {{ method_field('EDIT') }}
 
@@ -51,7 +51,7 @@
                 </form>
               </td>
               <td>
-                <form action="/product/{{ $product->id }}" method="POST">
+                <form action="/admin/portfolio/{{ $product->id }}" method="POST">
                   {{ csrf_field() }}
                   {{ method_field('DELETE') }}
 
@@ -68,7 +68,7 @@
 
       <br>
       <div class="col-md-2">
-        <form action="/product/create" method="GET">
+        <form action="/admin/portfolio/create" method="GET">
           {{ csrf_field() }}
           {{ method_field('create') }}
 

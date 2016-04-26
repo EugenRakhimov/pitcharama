@@ -24,13 +24,13 @@ Route::resource('visitor', 'VisitorController');
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['prefix'=>'admin','middleware' => ['web']], function () {
     Route::get('/', function () {
         return redirect()->action('ProductController@index');
     });
     // Authentication Routes...
     Route::auth();
-    Route::resource('product', 'ProductController');
-    Route::resource('product.feature', 'FeatureController');
-    Route::post('spreadsheets/load', 'SpreadsheetController@load');
+    Route::resource('/portfolio', 'ProductController');
+    Route::resource('/portfolio/feature', 'FeatureController');
+    Route::post('/spreadsheets/load', 'SpreadsheetController@load');
 });

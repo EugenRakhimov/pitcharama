@@ -13,7 +13,7 @@
                  @include('common.errors')
 
                  <!-- New Feature Form -->
-                 <form action="/product/{{$product->id}}/feature/{{$feature->id}}" method="POST" class="form-horizontal" id = "featureform">
+                 <form action="/admin/portfolio/{{$product->id}}/feature/{{$feature->id}}" method="POST" class="form-horizontal" id = "featureform">
                      {{ csrf_field() }}
                      {{ method_field('PATCH') }}
                      <!-- Feature Name -->

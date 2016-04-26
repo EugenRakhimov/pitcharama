@@ -15,11 +15,10 @@ class FeatureController extends Controller
     return view('features.create',['productId' => $productId]);
   }
 
-  public function edit(Request $request,Product $product, Feature $feature)
+  public function edit(Request $request,$product_id, $feature_id)
   {
-    // echo $product;
-    // echo $feature;
-    // exit();
+      $product= Product::find( $product_id);
+      $feature = Feature::find($feature_id);
       if (($feature->product->user_id ==  $request->user()->id)&&($feature->product == $product))
       {
           return view('features.edit',['product'=>$product,'feature' => $feature]);
@@ -30,8 +29,10 @@ class FeatureController extends Controller
       }
   }
 
-  public function update(Request $request,Product $product, Feature $feature)
+  public function update(Request $request, $product_id, $feature_id)
   {
+      $product= Product::find( $product_id);
+      $feature = Feature::find($feature_id);
       if (($feature->product->user_id ==  $request->user()->id)&&($feature->product == $product))
       {
         $this->validate($request, [
@@ -46,7 +47,7 @@ class FeatureController extends Controller
           'image_frame' => $request->image_frame,
           'image' => $request->image
         ]);
-        return redirect('/product/'.$product->id);
+        return redirect('/admin/portfolio/'.$product->id);
       }
       else
       {
@@ -54,12 +55,14 @@ class FeatureController extends Controller
       }
   }
 
-  public function destroy(Request $request, Product $product, Feature $feature)
+  public function destroy(Request $request, $product_id, $feature_id)
   {
+      $product= Product::find( $product_id);
+      $feature = Feature::find($feature_id);
       if (($feature->product->user_id ==  $request->user()->id)&&($feature->product == $product))
       {
           $feature->delete();
-          return redirect('/product/'.$product->id);
+          return redirect('/admin/portfolio/'.$product->id);
       }
       else
       {
@@ -87,7 +90,7 @@ class FeatureController extends Controller
             'image_frame' => $request->image_frame,
             'image' => $request->image
         ]);
-        return redirect('/product/'.$productId);
+        return redirect('/admin/portfolio/'.$productId);
       }
       else {
         return view('errors.503');

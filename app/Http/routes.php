@@ -31,6 +31,6 @@ Route::group(['prefix'=>'admin','middleware' => ['web']], function () {
     // Authentication Routes...
     Route::auth();
     Route::resource('/portfolio', 'ProductController');
-    Route::resource('/portfolio/feature', 'FeatureController');
+    Route::resource('portfolio.feature', 'FeatureController');
     Route::post('/spreadsheets/load', 'SpreadsheetController@load');
 });

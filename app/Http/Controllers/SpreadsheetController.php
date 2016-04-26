@@ -84,6 +84,6 @@ class SpreadsheetController extends Controller
       //     "email" => "john@example.com"
       // ));
 
-      return redirect('/product');
+      return redirect('/admin/portfolio');
     }
 }

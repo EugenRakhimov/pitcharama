@@ -78,7 +78,7 @@
         </form>
       </div>
       <div class="col-md-2">
-        <form action="/spreadsheets/load" method="post">
+        <form action="/admin/spreadsheets/load" method="post">
           {{ csrf_field() }}
 
           <button type="submit" id="new-product" class="btn btn-danger">

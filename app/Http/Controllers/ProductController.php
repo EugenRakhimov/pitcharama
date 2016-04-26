@@ -43,20 +43,22 @@ class ProductController extends Controller
             return view('errors.503');
         }
     }
-    public function destroy(Request $request, Product $product)
+    public function destroy(Request $request, $product_id)
     {
+        $product= Product::find( $product_id);
         if($product->user_id ==  $request->user()->id)
         {
             $product->delete();
-            return redirect('/product');
+            return redirect('/admin/portfolio');
         }
         else
         {
             return view('errors.503');
         }
     }
-    public function update(Request $request, Product $product)
+    public function update(Request $request,  $product_id)
     {
+        $product= Product::find( $product_id);
         if($product->user_id ==  $request->user()->id)
         {
             $this->validate($request, [
@@ -69,7 +71,7 @@ class ProductController extends Controller
                 'image' => $request->image,
                 'category' => $request->category
             ]);
-            return redirect('/product');
+            return redirect('/admin/portfolio');
         }
         else
         {
@@ -89,7 +91,7 @@ class ProductController extends Controller
             'image' => $request->image,
             'category' => $request->category
         ]);
-        return redirect('/product');
+        return redirect('/admin/portfolio');
     }
 
     public function create(Request $request)

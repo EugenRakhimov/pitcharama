@@ -49,7 +49,7 @@
               <img src="{{$feature->image}}" alt="" />
             </td>
             <td>
-              <form action="{{$product->id}}/feature/{{ $feature->id }}/edit" method="GET">
+              <form action="/admin/portfolio/{{$product->id}}/feature/{{ $feature->id }}/edit" method="GET">
                 {{ csrf_field() }}
                 {{ method_field('EDIT') }}
 
@@ -59,7 +59,7 @@
               </form>
             </td>
             <td>
-              <form action="{{$product->id}}/feature/{{ $feature->id }}" method="POST">
+              <form action="/admin/portfolio/{{$product->id}}/feature/{{ $feature->id }}" method="POST">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
 
@@ -76,7 +76,7 @@
 
     <br>
 
-    <form action="/product/{{$product->id}}/feature/create" method="GET">
+    <form action="/admin/portfolio/{{$product->id}}/feature/create" method="GET">
       {{ csrf_field() }}
       {{ method_field('create') }}
 

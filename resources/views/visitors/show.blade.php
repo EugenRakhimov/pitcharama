@@ -102,7 +102,7 @@
 					<div class="ms-screens" >
             @if (count($product->features) > 0)
 							@for ($i = 0; $i < $product->features->count(); $i++)
-								<a href="#{{$product->features[$i]->name}}" style='background: url({{$product->features[$i]->image}}) no-repeat center center; transform: translateZ({{265-$i*50}}px);'>
+								<a href="#{{$product->features[$i]->name}}" style='background: url({{$product->features[$i]->image}}) no-repeat center center; transform: translateZ({{105-$i*50}}px);'>
 								<div class="ms-label">{{$product->features[$i]->name}}</div></a>
 							@endfor
             @endif

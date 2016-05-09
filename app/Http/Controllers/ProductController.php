@@ -64,12 +64,14 @@ class ProductController extends Controller
             $this->validate($request, [
                 'name' => 'required|max:255',
                 'image' => 'required|max:255',
-                'category' => 'required|in:mobile,web,games,strategy'
+                'category' => 'required|in:mobile,web,games,strategy',
+                'youtube_frame'=>'required'
             ]);
             $product->update([
                 'name' => $request->name,
                 'image' => $request->image,
-                'category' => $request->category
+                'category' => $request->category,
+                'youtube_frame' => $request->youtube_frame
             ]);
             return redirect('/admin/portfolio');
         }
@@ -84,12 +86,14 @@ class ProductController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'image' => 'required|max:255',
-            'category' => 'required|in:mobile,web,games,strategy'
+            'category' => 'required|in:mobile,web,games,strategy',
+            'youtube_frame'=>'required'
         ]);
         $request->user()->products()->create([
             'name' => $request->name,
             'image' => $request->image,
-            'category' => $request->category
+            'category' => $request->category,
+            'youtube_frame' => $request->youtube_frame
         ]);
         return redirect('/admin/portfolio');
     }

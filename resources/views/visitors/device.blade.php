@@ -6,7 +6,7 @@
   <div class="camera"></div>
   <div class="sensor"></div>
   <div class="speaker"></div>
-  <div class="screen" style='background: url({{$feature->image}}) no-repeat center center; '>
+  <div class="screen" style='background: url({{$feature->image}}) no-repeat center center; background-size: contain;'>
       <!-- Content goes here -->
   </div>
   <div class="home"></div>
@@ -23,5 +23,5 @@
 </div>
 @endif
 @if ($feature->image_frame == 'desktop')
-<img src="{{$feature->image}}" alt="" /> 
+<img src="{{$feature->image}}" alt="" />
 @endif

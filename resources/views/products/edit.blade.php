@@ -33,6 +33,14 @@
                                 <input type="text" name="image" id="image" class="form-control" value="{{ $product->image }}">
                             </div>
                         </div>
+                        <!-- Product video frame -->
+                        <div class="form-group">
+                            <label for="youtube_frame" class="col-sm-3 control-label">Youtube link</label>
+
+                            <div class="col-sm-6">
+                                <input type="text" name="youtube_frame" id="youtube_frame" class="form-control" value="{{ $product->youtube_frame }}">
+                            </div>
+                        </div>
                         <!-- Product Category -->
                         <div class="form-group">
                             <label for="product-category" class="col-sm-3 control-label">Category</label>

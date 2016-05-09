@@ -63,9 +63,7 @@
 
         		<!-- START MENU  -->
         		<ul class="menu" id="headnav">
-        			<li class="feat"><a href="../#">What we do</a></li>
-        			<li><a href="../portfolio.html" class="active"> Our Work </a></li>
-        			<li class="last"><a href="mailto:hello@superlogical.org">Contact Us</a></li>
+        	  			<li class="last"><a href="mailto:hello@superlogical.org">Contact Us</a></li>
         		</ul>
 
 

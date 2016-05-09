@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     //
-    protected $fillable = ['name','category','image'];
+    protected $fillable = ['name','category','image','youtube_frame'];
 
     public function user()
     {

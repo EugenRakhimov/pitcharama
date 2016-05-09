@@ -20,6 +20,7 @@
             <th>Product</th>
             <th>Category</th>
             <th>image</th>
+            <th>Video</th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -31,6 +32,7 @@
               <td>{{ $product->name }}</td>
               <td>{{ $product->category }}</td>
               <td><img src={{$product->image}} alt="" /></img></td>
+              <td>{!! $product->youtube_frame !!}</td>
               <td>
                 <form action="/admin/portfolio/{{ $product->id }}" method="GET">
                   {{ csrf_field() }}

@@ -55,8 +55,6 @@
 
                 		<!-- START MENU  -->
                 		<ul class="menu" id="headnav">
-                			<li class="feat"><a href="/">What we do</a></li>
-                			<li><a class="active" href="/" > Our Work </a></li>
                 			<li class="last"><a href="mailto:nick@superlogic.al">Contact Us</a></li>
                 		</ul>
 
@@ -67,25 +65,12 @@
                 <!-- END SLIDER -->
 
 
-
-
-
-
-
-
-
 		<!-- START FEATURES  -->
         <div class="main-container internal">
             <div class="main wrapper clearfix section">
 				<article>
 
                      <h2 id="gallery-title"> Our Work </h2>
-
-
-
-
-
-
                 </article>
 
                 <article>

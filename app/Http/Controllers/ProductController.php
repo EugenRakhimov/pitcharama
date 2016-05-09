@@ -64,8 +64,7 @@ class ProductController extends Controller
             $this->validate($request, [
                 'name' => 'required|max:255',
                 'image' => 'required|max:255',
-                'category' => 'required|in:mobile,web,games,strategy',
-                'youtube_frame'=>'required'
+                'category' => 'required|in:mobile,web,games,strategy'
             ]);
             $product->update([
                 'name' => $request->name,
@@ -86,8 +85,7 @@ class ProductController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'image' => 'required|max:255',
-            'category' => 'required|in:mobile,web,games,strategy',
-            'youtube_frame'=>'required'
+            'category' => 'required|in:mobile,web,games,strategy'
         ]);
         $request->user()->products()->create([
             'name' => $request->name,

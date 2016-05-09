@@ -188,7 +188,7 @@
 
 		</style>
 
-		<div id="call-to-action">
+		<!-- <div id="call-to-action"> -->
 
 		</div>
 

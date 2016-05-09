@@ -87,8 +87,8 @@
 			</script>
 			<button class="btn btn-default" id="btnApp"> {{$product->name}}  </button>
 
-			<div class="ms-perspective">
-				
+			<div class="ms-perspective" style="height:1%">
+
 			</div><!-- /ms-perspective -->
 		</div><!-- /ms-wrapper -->
 		<script src="../mobile/js/classie.js"></script>

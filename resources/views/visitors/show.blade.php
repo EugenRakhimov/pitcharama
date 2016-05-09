@@ -63,7 +63,7 @@
 
         		<!-- START MENU  -->
         		<ul class="menu" id="headnav">
-        	  			<li class="last"><a href="mailto:hello@superlogical.org">Contact Us</a></li>
+        	  			<li class="last"><a href="mailto:nick@kitset.io">Contact Us</a></li>
         		</ul>
 
 

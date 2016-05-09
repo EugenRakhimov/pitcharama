@@ -55,7 +55,7 @@
 
                 		<!-- START MENU  -->
                 		<ul class="menu" id="headnav">
-                			<li class="last"><a href="mailto:nick@superlogic.al">Contact Us</a></li>
+                			<li class="last"><a href="mailto:nick@kitset.io">Contact Us</a></li>
                 		</ul>
 
                 	</div>

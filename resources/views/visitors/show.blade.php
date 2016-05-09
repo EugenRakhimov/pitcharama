@@ -87,28 +87,7 @@
 			</script>
 			<button class="btn btn-default" id="btnApp"> {{$product->name}}  </button>
 
-			<div class="ms-perspective">
-				<div class="ms-device" >
-					<div class="ms-object">
-
-						<div class="ms-back"></div>
-						<div class="ms-left ms-side"></div>
-						<div class="ms-right ms-side"></div>
-						<div class="ms-top ms-side"></div>
-						<div class="ms-bottom ms-side"></div>
-						<div class="ms-front" ></div>
-
-					</div><!-- /ms-object -->
-					<div class="ms-screens" >
-            @if (count($product->features) > 0)
-							@for ($i = 0; $i < $product->features->count(); $i++)
-								<a href="#{{$product->features[$i]->name}}" style='background: url({{$product->features[$i]->image}}) no-repeat center center; transform: translateZ({{105-$i*50}}px);'>
-								<div class="ms-label">{{$product->features[$i]->name}}</div></a>
-							@endfor
-            @endif
-					</div>
-				</div><!-- /ms-device -->
-			</div><!-- /ms-perspective -->
+			<!-- /ms-perspective -->
 		</div><!-- /ms-wrapper -->
 		<script src="../mobile/js/classie.js"></script>
 		<script src="../mobile/js/phoneSlideshow.js"></script>

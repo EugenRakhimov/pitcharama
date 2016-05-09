@@ -69,8 +69,7 @@ class ProductController extends Controller
             $product->update([
                 'name' => $request->name,
                 'image' => $request->image,
-                'category' => $request->category,
-                'youtube_frame' => $request->youtube_frame
+                'category' => $request->category
             ]);
             return redirect('/admin/portfolio');
         }
@@ -90,8 +89,7 @@ class ProductController extends Controller
         $request->user()->products()->create([
             'name' => $request->name,
             'image' => $request->image,
-            'category' => $request->category,
-            'youtube_frame' => $request->youtube_frame
+            'category' => $request->category
         ]);
         return redirect('/admin/portfolio');
     }

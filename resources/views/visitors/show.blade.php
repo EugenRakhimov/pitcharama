@@ -87,7 +87,7 @@
 			</script>
 			<button class="btn btn-default" id="btnApp"> {{$product->name}}  </button>
 
-			<div class="ms-perspective" style="height:1%">
+			<div class="ms-perspective" style="height:100px">
 
 			</div><!-- /ms-perspective -->
 		</div><!-- /ms-wrapper -->

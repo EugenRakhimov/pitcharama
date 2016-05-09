@@ -129,9 +129,9 @@
     					<article class="cbp-so-side cbp-so-side-right">
     						@include('visitors.article')
     						<p>
-    							<button class="btn btn-default" data-toggle="modal" data-target="#myModal" >
+    							<!-- <button class="btn btn-default" data-toggle="modal" data-target="#myModal" >
     								Want to know the cost of an App like this
-    							</button>
+    							</button> -->
     						</p>
     					</article>
     				</section>
@@ -188,7 +188,7 @@
 
 		</style>
 
-		<!-- <div id="call-to-action"> -->
+		<div id="call-to-action">
 
 		</div>
 
